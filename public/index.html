@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo Inteligente: Resumos Automáticos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Estudo Inteligente: Gerador de Resumos com IA</h1>
+        <p>Otimize seu aprendizado com resumos rápidos e eficientes.</p>
+    </header>
+
+    <main>
+    <div class="content-wrapper"> <section class="input-section">
+            <h2>Cole seu texto aqui:</h2>
+            <textarea id="textInput" placeholder="Cole o texto que você deseja resumir..." rows="15"></textarea>
+            <button id="summarizeBtn">Gerar Resumo</button>
+        </section>
+
+        <section class="output-section">
+            <h2>Seu Resumo:</h2>
+            <div id="summaryOutput" class="summary-box">
+                <p>O resumo aparecerá aqui.</p>
+            </div>
+            <button id="copySummaryBtn" style="display: none;">Copiar Resumo</button>
+        </section>
+    </div> </main>
+
+    <footer>
+        <p>&copy; 2025 Projeto Estudo Inteligente. Desenvolvido para Atividade Extensionista UNINTER.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

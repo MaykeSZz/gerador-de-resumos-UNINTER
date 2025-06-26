@@ -1,0 +1,208 @@
+/* style.css */
+
+/* Definição de Variáveis CSS para Cores */
+:root {
+    --primary-color: #4A90E2; /* Um azul mais vibrante */
+    --secondary-color: #6B7B8E; /* Um cinza-azul para texto secundário */
+    --accent-color: #F5A623; /* Um laranja para detalhes/avisos */
+    --text-color: #333;
+    --light-bg: #F8F9FA; /* Fundo mais claro */
+    --white-bg: #FFFFFF;
+    --border-color: #E0E0E0;
+    --success-color: #5CB85C; /* Verde para sucesso */
+    --error-color: #D9534F; /* Vermelho para erro */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Nova fonte principal */
+    line-height: 1.7; /* Aumenta um pouco o espaçamento de linha */
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: var(--primary-color); /* Usando a variável de cor */
+    color: var(--white-bg);
+    padding: 1.5rem 0; /* Aumenta o padding */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra mais pronunciada */
+    position: sticky; /* Mantém o cabeçalho no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Aumenta o tamanho da fonte */
+    font-weight: 600; /* Mais negrito */
+    letter-spacing: -0.5px; /* Ajuste sutil */
+}
+
+header p {
+    font-size: 1.2rem; /* Aumenta o tamanho */
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
+main {
+    flex: 1;
+    padding: 30px;
+    max-width: 1100px; /* Aumentado para dar mais espaço */
+    margin: 30px auto;
+    background: var(--white-bg);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+section {
+    margin-bottom: 40px; /* Mais espaçamento entre seções */
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif; /* Nova fonte para títulos de seção */
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center; /* NOVO: Centraliza o texto do h2 */
+}
+
+/* Para organizar as caixas lado a lado em telas maiores */
+.content-wrapper {
+    display: flex;
+    gap: 40px; /* Aumenta um pouco mais o espaço entre as caixas */
+    flex-wrap: wrap;
+}
+
+.input-section,
+.output-section {
+    flex: 1; /* Faz com que cada seção ocupe o espaço disponível igualmente */
+    min-width: 300px; /* Largura mínima antes de quebrar para a próxima linha */
+}
+
+/* Garante que os títulos h2 tenham margem inferior adequada */
+.input-section h2,
+.output-section h2 {
+    margin-bottom: 25px; /* Manter a margem padrão definida antes */
+}
+
+textarea {
+    width: 100%; /* Garante 100% de largura */
+    padding: 15px; /* Mais padding interno */
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* Cantos mais arredondados */
+    font-size: 1.05rem; /* Levemente maior */
+    resize: vertical;
+    min-height: 280px; /* Aumenta a altura mínima */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2); /* Sombra azul suave no foco */
+}
+
+button {
+    background: var(--primary-color);
+    color: var(--white-bg);
+    padding: 14px 25px; /* Mais padding */
+    border: none;
+    border-radius: 8px; /* Mais arredondado */
+    cursor: pointer;
+    font-size: 1.15rem; /* Levemente maior */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Adiciona transição de transformação */
+    margin-top: 20px; /* Mais margem superior */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para o botão */
+}
+
+button:hover {
+    background: #3A7BCD; /* Um tom um pouco mais escuro de azul no hover */
+    transform: translateY(-2px); /* Efeito de "levantar" no hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: translateY(0); /* Volta ao normal no clique */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.summary-box {
+    background-color: var(--light-bg); /* Fundo mais suave */
+    border: 1px solid var(--border-color);
+    padding: 20px; /* Mais padding */
+    border-radius: 8px;
+    min-height: 180px; /* Aumenta a altura mínima */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Roboto', sans-serif; /* Fonte para o texto do resumo */
+    font-size: 1.05rem;
+    color: var(--secondary-color); /* Cor de texto mais suave */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Sombra interna sutil */
+}
+
+.summary-box p {
+    margin: 0;
+}
+
+#copySummaryBtn {
+    margin-top: 15px;
+    background-color: var(--success-color); /* Cor verde para copiar */
+}
+
+#copySummaryBtn:hover {
+    background-color: #4CAF50; /* Um verde um pouco mais escuro */
+}
+
+footer {
+    text-align: center;
+    padding: 1.2rem 0; /* Mais padding */
+    background: #333; /* Fundo escuro */
+    color: var(--light-bg); /* Texto claro */
+    margin-top: auto;
+    font-size: 0.9rem;
+    border-top: 1px solid #444;
+}
+
+@media (max-width: 768px) {
+    main {
+        margin: 15px;
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    header p {
+        font-size: 1.05rem;
+    }
+    button {
+        width: 100%; /* Botões ocupam largura total em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+    header p {
+        font-size: 0.95rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    textarea {
+        min-height: 200px;
+    }
+    .summary-box {
+        min-height: 120px;
+    }
+}
