@@ -98,3 +98,70 @@ summarizeBtn.addEventListener('click', async () => {
             let errorMessage = `Ocorreu um erro ao gerar o resumo. Status: ${response.status}.`;
             if (errorData && errorData.error) {
                 errorMessage += ` Detalhe: ${errorData.error}`;
+            } else if (response.statusText) {
+                errorMessage += ` Resposta: ${response.statusText}`;
+            }
+            summaryOutput.innerHTML = `<p style="color: red;">${errorMessage}</p>`;
+            return;
+        }
+
+        const data = await response.json();
+
+        // Exibe o resumo e salva no histórico se a resposta for bem-sucedida
+        if (data && data.summary) {
+            const summary = data.summary;
+            summaryOutput.innerHTML = `<p>${summary}</p>`;
+            copySummaryBtn.style.display = 'block';
+            downloadTxtBtn.style.display = 'block';
+            saveToHistory(text, summary); // Salva o resumo no histórico
+        } else {
+            summaryOutput.innerHTML = '<p style="color: red;">Não foi possível gerar um resumo. Resposta inesperada do servidor.</p>';
+        }
+
+    } catch (error) {
+        console.error('Erro ao conectar com o Backend:', error);
+        summaryOutput.innerHTML = '<p style="color: red;">Erro de conexão com o servidor. Verifique se o backend está rodando.</p>';
+    }
+});
+
+// Adiciona listener para o botão "Copiar Resumo"
+copySummaryBtn.addEventListener('click', () => {
+    const summaryText = summaryOutput.querySelector('p').innerText;
+    
+    navigator.clipboard.writeText(summaryText)
+        .then(() => {
+            alert('Resumo copiado para a área de transferência!');
+        })
+        .catch(err => {
+            console.error('Erro ao copiar o texto: ', err);
+            alert('Erro ao copiar o resumo. Por favor, copie manualmente.');
+        });
+});
+
+// Adiciona listener para o botão "Baixar Resumo (.txt)"
+downloadTxtBtn.addEventListener('click', () => {
+    const summaryText = summaryOutput.querySelector('p').innerText;
+    
+    // Cria um Blob com o conteúdo do resumo para download
+    const blob = new Blob([summaryText], { type: 'text/plain;charset=utf-8' });
+    
+    // Cria um URL temporário e um link para iniciar o download
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'resumo_inteligente.txt'; // Nome do arquivo a ser baixado
+    document.body.appendChild(a);
+    a.click();
+    
+    // Limpa o URL temporário após o download
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+});
+
+// Adiciona listener para o botão "Limpar Histórico"
+clearHistoryBtn.addEventListener('click', () => {
+    if (confirm('Tem certeza que deseja limpar todo o histórico de resumos?')) {
+        localStorage.removeItem(HISTORY_KEY); // Remove o histórico do localStorage
+        loadHistory(); // Recarrega o histórico (que agora estará vazio)
+    }
+});
