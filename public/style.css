@@ -14,8 +14,8 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Nova fonte principal */
-    line-height: 1.7; /* Aumenta um pouco o espaçamento de linha */
+    font-family: 'Poppins', sans-serif; /* Fonte principal */
+    line-height: 1.7; /* Espaçamento de linha */
     margin: 0;
     padding: 0;
     background-color: var(--light-bg);
@@ -26,25 +26,25 @@ body {
 }
 
 header {
-    background: var(--primary-color); /* Usando a variável de cor */
+    background: var(--primary-color);
     color: var(--white-bg);
-    padding: 1.5rem 0; /* Aumenta o padding */
+    padding: 1.5rem 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra mais pronunciada */
-    position: sticky; /* Mantém o cabeçalho no topo ao rolar */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem; /* Aumenta o tamanho da fonte */
-    font-weight: 600; /* Mais negrito */
-    letter-spacing: -0.5px; /* Ajuste sutil */
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
 header p {
-    font-size: 1.2rem; /* Aumenta o tamanho */
+    font-size: 1.2rem;
     margin-top: 8px;
     opacity: 0.9;
 }
@@ -52,7 +52,7 @@ header p {
 main {
     flex: 1;
     padding: 30px;
-    max-width: 1100px; /* Aumentado para dar mais espaço */
+    max-width: 1100px;
     margin: 30px auto;
     background: var(--white-bg);
     border-radius: 12px;
@@ -60,24 +60,24 @@ main {
 }
 
 section {
-    margin-bottom: 40px; /* Mais espaçamento entre seções */
+    margin-bottom: 40px;
 }
 
 h2 {
-    font-family: 'Roboto', sans-serif; /* Nova fonte para títulos de seção */
+    font-family: 'Roboto', sans-serif; /* Fonte para títulos de seção */
     color: var(--primary-color);
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 12px;
     margin-bottom: 25px;
     font-size: 1.8rem;
     font-weight: 700;
-    text-align: center; /* NOVO: Centraliza o texto do h2 */
+    text-align: center;
 }
 
-/* Para organizar as caixas lado a lado em telas maiores */
+/* Estilos para organizar as caixas lado a lado em telas maiores */
 .content-wrapper {
     display: flex;
-    gap: 40px; /* Aumenta um pouco mais o espaço entre as caixas */
+    gap: 40px; /* Espaço entre as caixas de input e output */
     flex-wrap: wrap;
 }
 
@@ -90,17 +90,17 @@ h2 {
 /* Garante que os títulos h2 tenham margem inferior adequada */
 .input-section h2,
 .output-section h2 {
-    margin-bottom: 25px; /* Manter a margem padrão definida antes */
+    margin-bottom: 25px;
 }
 
 textarea {
-    width: 100%; /* Garante 100% de largura */
-    padding: 15px; /* Mais padding interno */
+    width: 100%;
+    padding: 15px;
     border: 1px solid var(--border-color);
-    border-radius: 8px; /* Cantos mais arredondados */
-    font-size: 1.05rem; /* Levemente maior */
+    border-radius: 8px;
+    font-size: 1.05rem;
     resize: vertical;
-    min-height: 280px; /* Aumenta a altura mínima */
+    min-height: 280px;
     box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -108,71 +108,158 @@ textarea {
 textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2); /* Sombra azul suave no foco */
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
 }
 
 button {
     background: var(--primary-color);
     color: var(--white-bg);
-    padding: 14px 25px; /* Mais padding */
+    padding: 14px 25px;
     border: none;
-    border-radius: 8px; /* Mais arredondado */
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1.15rem; /* Levemente maior */
+    font-size: 1.15rem;
     font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Adiciona transição de transformação */
-    margin-top: 20px; /* Mais margem superior */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para o botão */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 button:hover {
-    background: #3A7BCD; /* Um tom um pouco mais escuro de azul no hover */
-    transform: translateY(-2px); /* Efeito de "levantar" no hover */
+    background: #3A7BCD;
+    transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 button:active {
-    transform: translateY(0); /* Volta ao normal no clique */
+    transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Estilos para a área de resumo */
 .summary-box {
-    background-color: var(--light-bg); /* Fundo mais suave */
+    background-color: var(--light-bg);
     border: 1px solid var(--border-color);
-    padding: 20px; /* Mais padding */
+    padding: 20px;
     border-radius: 8px;
-    min-height: 180px; /* Aumenta a altura mínima */
+    min-height: 180px;
     white-space: pre-wrap;
     word-wrap: break-word;
-    font-family: 'Roboto', sans-serif; /* Fonte para o texto do resumo */
+    font-family: 'Roboto', sans-serif;
     font-size: 1.05rem;
-    color: var(--secondary-color); /* Cor de texto mais suave */
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Sombra interna sutil */
+    color: var(--secondary-color);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .summary-box p {
     margin: 0;
 }
 
+/* Estilos para o grupo de botões de saída */
+.output-buttons {
+    display: flex; /* Organiza os botões lado a lado */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 15px; /* Espaçamento superior */
+    justify-content: flex-end; /* Alinha os botões à direita, se houver espaço */
+}
+
+.output-buttons button {
+    margin-top: 0; /* Zera a margem superior individual para usar a do grupo */
+    flex-grow: 1; /* Faz os botões crescerem para preencher o espaço, se necessário */
+    max-width: 200px; /* Limita o tamanho máximo para não ficarem muito largos */
+}
+
+/* Estilo para o botão de copiar */
 #copySummaryBtn {
-    margin-top: 15px;
-    background-color: var(--success-color); /* Cor verde para copiar */
+    background-color: var(--success-color);
 }
 
 #copySummaryBtn:hover {
-    background-color: #4CAF50; /* Um verde um pouco mais escuro */
+    background-color: #4CAF50;
+}
+
+/* Estilo para o botão de download TXT */
+#downloadTxtBtn {
+    background-color: var(--secondary-color);
+}
+
+#downloadTxtBtn:hover {
+    background-color: #556677;
+}
+
+/* Estilos para a seção de histórico */
+.history-section {
+    margin-top: 50px; /* Mais espaçamento superior para separar das caixas principais */
+}
+
+.history-box {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 100px; /* Altura mínima para o histórico */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+    max-height: 400px; /* Altura máxima para a caixa de histórico */
+}
+
+.history-item {
+    background-color: var(--white-bg);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.history-item h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 5px;
+    text-align: left; /* Títulos de item de histórico alinhados à esquerda */
+}
+
+.history-item p {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.history-item small {
+    display: block; /* Cada small em sua própria linha */
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Estilo para o botão de limpar histórico */
+#clearHistoryBtn {
+    background-color: var(--error-color); /* Cor vermelha para limpar */
+    margin-left: auto; /* Alinha o botão à direita */
+    display: block; /* Garante que o botão ocupe sua própria linha */
+}
+
+#clearHistoryBtn:hover {
+    background-color: #C9302C;
 }
 
 footer {
     text-align: center;
-    padding: 1.2rem 0; /* Mais padding */
-    background: #333; /* Fundo escuro */
-    color: var(--light-bg); /* Texto claro */
+    padding: 1.2rem 0;
+    background: #333;
+    color: var(--light-bg);
     margin-top: auto;
     font-size: 0.9rem;
     border-top: 1px solid #444;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
     main {
         margin: 15px;
@@ -184,8 +271,16 @@ footer {
     header p {
         font-size: 1.05rem;
     }
-    button {
-        width: 100%; /* Botões ocupam largura total em telas menores */
+    .content-wrapper {
+        flex-direction: column; /* Empilha as seções em telas menores */
+        gap: 20px;
+    }
+    .output-buttons {
+        flex-direction: column; /* Empilha os botões de saída em telas menores */
+        align-items: stretch; /* Estica os botões para largura total */
+    }
+    .output-buttons button {
+        max-width: 100%; /* Garante que os botões ocupem a largura total */
     }
 }
 
@@ -202,7 +297,7 @@ footer {
     textarea {
         min-height: 200px;
     }
-    .summary-box {
+    .summary-box, .history-box {
         min-height: 120px;
     }
 }

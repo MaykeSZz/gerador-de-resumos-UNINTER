@@ -16,20 +16,33 @@
     </header>
 
     <main>
-    <div class="content-wrapper"> <section class="input-section">
-            <h2>Cole seu texto aqui:</h2>
-            <textarea id="textInput" placeholder="Cole o texto que você deseja resumir..." rows="15"></textarea>
-            <button id="summarizeBtn">Gerar Resumo</button>
-        </section>
+        <div class="content-wrapper">
+            <section class="input-section">
+                <h2>Cole seu texto aqui:</h2>
+                <textarea id="textInput" placeholder="Cole o texto que você deseja resumir..." rows="15"></textarea>
+                <button id="summarizeBtn">Gerar Resumo</button>
+            </section>
 
-        <section class="output-section">
-            <h2>Seu Resumo:</h2>
-            <div id="summaryOutput" class="summary-box">
-                <p>O resumo aparecerá aqui.</p>
+            <section class="output-section">
+                <h2>Seu Resumo:</h2>
+                <div id="summaryOutput" class="summary-box">
+                    <p>O resumo aparecerá aqui.</p>
+                </div>
+                <div class="output-buttons">
+                    <button id="downloadTxtBtn" style="display: none;">Baixar Resumo (.txt)</button>
+                    <button id="copySummaryBtn" style="display: none;">Copiar Resumo</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="history-section">
+            <h2>Histórico de Resumos</h2>
+            <div id="historyList" class="history-box">
+                <p>Nenhum resumo no histórico ainda.</p>
             </div>
-            <button id="copySummaryBtn" style="display: none;">Copiar Resumo</button>
+            <button id="clearHistoryBtn" style="display: none;">Limpar Histórico</button>
         </section>
-    </div> </main>
+    </main>
 
     <footer>
         <p>&copy; 2025 Projeto Estudo Inteligente. Desenvolvido para Atividade Extensionista UNINTER.</p>
